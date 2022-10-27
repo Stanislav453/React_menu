@@ -1,0 +1,126 @@
+.Navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+    height: 60px;
+    background-color: rgba(5, 222, 63, 0.773);
+}
+
+.active {
+    display: none;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+    .nav-menu {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        margin: 0;
+    
+    
+        li {
+            display: flex;
+            list-style-type: none;
+    
+        }
+        
+    }
+
+    .NavbarLink {
+        padding: 16px 30px;
+        text-decoration: none;
+        font-weight: 900;
+        letter-spacing: 2px;
+        color: #fff;
+        font-size: 20px;
+        transition: background-color .3s;
+
+        &:hover {
+            background-color: darken($color: rgba(5, 222, 63, 0.773), $amount: 2);
+            transition: background-color .3s;
+        }
+    }
+
+
+
+.menu-left {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+        .bx {
+            color: #fff;
+            font-size: 52px;
+            cursor: pointer;
+            transform: rotate(0deg);
+            transition: transform .3s;
+        
+
+            &:hover {
+                transform: rotate(20deg);
+                transition: transform .3s;
+            }   
+        }
+
+        .mobile-menu {
+            .bx {
+                display: none;
+            }
+        }
+}
+
+
+@media ( max-width: 550px ) {
+
+    .Navbar {
+        position: relative;
+    }
+
+    .nav-menu {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: auto;
+        position: absolute;
+        top: 60px;
+        left: -100%;
+        opacity: 1;
+        transition: all .5s ease-in-out;
+
+        li {
+            width: 100%;
+        }
+    }
+
+    .NavbarLink {
+        width: 100%;
+        padding: 2rem;
+
+    }
+
+
+    .active {  
+        left: 0;
+        background-color: rgba(5, 222, 63, 0.773);
+        opacity: 1;
+        transition: all .5s ease-in-out;
+        z-index: 1;
+    }
+
+
+    .menu-left {
+        width: 100%;
+        justify-content: space-between;
+
+        .mobile-menu {
+            .bx {
+                display: block;
+            }
+        }
+    }
+}
